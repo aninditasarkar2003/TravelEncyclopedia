@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     if (mysqli_query($conn, $sql)) {
         echo "<script>
         
-        window.location='http://localhost/jisECE/admin/viewmenu.php';
+        window.location='http://localhost/TravelEncyclopedia/admin/viewmenu.php';
         </script>";  
     }else{
         echo "Error" .mysqli_error($conn);

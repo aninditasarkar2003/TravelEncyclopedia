@@ -1,5 +1,5 @@
 <?php
-    $dbname = 'user_login';
+    $dbname = 'travelencyclopedia';
     $host = 'localhost';
     $username = 'root';
     $password = '';

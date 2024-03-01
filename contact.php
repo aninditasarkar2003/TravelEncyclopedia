@@ -1,15 +1,18 @@
+<?php
+session_start(); // Start the session at the beginning of your script
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>TRAVELER - Free Travel Website Template</title>
+    <title>TRAVEL ENCYCLOPEDIA | Contact</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/logo.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,22 +32,23 @@
 <body>
 
     <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-fluid position-relative p-0 m-0" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg shadow-lg py-8 py-lg-0 pl-8 pl-lg-13">
-                <a href="" class="navbar-brand">
-                    <h1 class="text-primary"><span class="text-light">TRAVEL ENCYCLO</span>PEDIA</h1>
+   <div class="container-fluid position-relative  nav-bar p-0 ">
+        <div class="container-fluid position-relative bg-dark pt-8 m-0" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg  shadow-lg py-2 pl-8 pl-lg-13">
+            <a href="#" class="">
+                    <img src="img/logo.png" alt="Logo" style="height: 40px; display: inline-block; vertical-align: middle;">
+                    <h1 style="display: inline-block; vertical-align: middle;" class="m-0 text-primary"><span class="text-light">TRAVEL ENCYCLO</span>PEDIA</h1>
                 </a>
                 
                 
                     <div class="navbar-nav ml-auto py-0" >
-                        <a href="index.php" class="nav-item nav-link text-light">Home</a>
-                        <a href="about.php" class="nav-item nav-link text-light">About</a>
+                        <a href="index.php" class="nav-item nav-link text-light ">Home</a>
+                        <a href="about.php" class="nav-item nav-link  text-light">About</a>
                         <a href="service.php" class="nav-item nav-link text-light">Services</a>
                         <a href="package.php" class="nav-item nav-link text-light">Tour Packages</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu border-0 rounded-0 m-0">
+                            <div class="dropdown-menu bg-dark border-0 rounded-lg m-0">
                                 <a href="blog.php" class="dropdown-item text-light">Blog Grid</a>
                                 <a href="single.php" class="dropdown-item text-light">Blog Detail</a>
                                 <a href="destination.php" class="dropdown-item text-light">Destination</a>
@@ -52,7 +56,13 @@
                                 <a href="testimonial.php" class="dropdown-item text-light">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.php" class="nav-item nav-link active">Contact</a>
+                        <a href="contact.php" class="nav-item nav-link active text-primary">Contact</a>
+                        <?php
+if (!isset($_SESSION['login_admin'])) {
+    // The 'login_admin' session variable is not set, so the user is not logged in
+    echo '<a href="./user/index.php" class="btn btn-success">Sign Up</a>';
+}
+?>
                     </div>
                 
             </nav>

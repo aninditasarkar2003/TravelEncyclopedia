@@ -14,25 +14,42 @@
                         <li><a href="#" onclick="show1()"> <i class="fab fa-product-hunt"></i> Package <i class="fas fa-angle-down" id="drop1"></i></a></li>
 
                         <div id="submenu1">
-                            <a href="menu.php" style="text-decoration: none;"> <i class="fas fa-circle-notch"></i> Add Package</a>
+                            <a href="menu.php" style="text-decoration: none;"> <i class="fas fa-plus"></i> Add Package</a>
                         </div>
-
-
-                        <li><a href="#" onclick="show2()">  <i class="fas fa-layer-group"></i> Food <i class="fas fa-angle-down" id="drop2"></i></a>  </li>
-                        
                         <div id="submenu2">
-                            <a href="#"> <i class="fas fa-circle-notch"></i> Add Food</a>
+                            <a href="viewmenu.php" style="text-decoration: none;"> <i class="fas fa-circle-notch"></i> View Packages</a>
                         </div>
 
-                        <li><a href="#" onclick="show3()"> <i class="fas fa-calendar-plus"></i> Order <i class="fas fa-angle-down" id="drop3"></i></a> </li>
+                        <li><a href="#" onclick="show2()"> <i class="fas fa-users"></i> Guide <i class="fas fa-angle-down" id="drop2"></i></a></li>
 
                         <div id="submenu3">
-                            <a href="#"> <i class="fas fa-circle-notch"></i> Home</a>
+                            <a href="guide.php" style="text-decoration: none;"> <i class="fas fa-plus"></i> Add Guide</a>
+                        </div>
+                        <div id="submenu4">
+                            <a href="viewguide.php" style="text-decoration: none;"> <i class="fas fa-circle-notch"></i> View Guides</a>
                         </div>
 
-                        <li><a href="#" onclick="show4()"> <i class="far fa-user"></i> Users <i class="fas fa-angle-down" id="drop4"></i></a> </li>
 
-                        <div id="submenu4">
+                        <li><a href="#" onclick="show3()">  <i class="fas fa-layer-group"></i> Destination <i class="fas fa-angle-down" id="drop3"></i></a>  </li>
+                        
+                        <div id="submenu5">
+                            <a href="#"> <i class="fas fa-plus"></i> Add Destination</a>
+                        </div>
+                        <div id="submenu6">
+                            <a href="#"> <i class="fas fa-circle-notch"></i> View Destinations</a>
+                        </div>
+
+                        <li><a href="#" onclick="show4()"> <i class="fas fa-newspaper"></i> Blog <i class="fas fa-angle-down" id="drop4"></i></a> </li>
+
+                        <div id="submenu7">
+                            <a href="#"> <i class="fas fa-plus"></i>Add Blogs</a>
+                        </div>
+                        <div id="submenu8">
+                            <a href="#"> <i class="fas fa-circle-notch"></i> View blogs</a>
+                        </div>
+                        <li><a href="#" onclick="show5()"> <i class="far fa-user"></i> Users <i class="fas fa-angle-down" id="drop5"></i></a> </li>
+
+                        <div id="submenu9">
                             <a href="#"> <i class="fas fa-circle-notch"></i> Home</a>
                         </div>
                     </ul>

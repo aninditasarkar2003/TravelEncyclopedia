@@ -17,50 +17,70 @@ function bars(){
 
 
 function show1(){
-    if(document.getElementById('submenu1').style.display == 'block'){
+    if(document.getElementById('submenu1').style.display == 'block' && document.getElementById('submenu2').style.display == 'block'){
         document.getElementById('submenu1').style.display = 'none';
+        document.getElementById('submenu2').style.display = 'none';
     }
     else{
         document.getElementById('submenu1').style.display = 'block';
-        document.getElementById('submenu2').style.display = 'none';
+        document.getElementById('submenu2').style.display = 'block';
         document.getElementById('submenu3').style.display = 'none';
         document.getElementById('submenu4').style.display = 'none';
+        document.getElementById('submenu5').style.display = 'none';
+        document.getElementById('submenu6').style.display = 'none';
+        document.getElementById('submenu7').style.display = 'none';
+        document.getElementById('submenu8').style.display = 'none';
     }
 }
 
 function show2(){
-    if(document.getElementById('submenu2').style.display == 'block'){
-        document.getElementById('submenu2').style.display = 'none';
-    }
+  if(document.getElementById('submenu3').style.display == 'block' && document.getElementById('submenu4').style.display == 'block'){
+    document.getElementById('submenu3').style.display = 'none';
+    document.getElementById('submenu4').style.display = 'none';
+}
     else{
-        document.getElementById('submenu2').style.display = 'block';
-        document.getElementById('submenu1').style.display = 'none';
-        document.getElementById('submenu3').style.display = 'none';
-        document.getElementById('submenu4').style.display = 'none';
+      document.getElementById('submenu1').style.display = 'none';
+      document.getElementById('submenu2').style.display = 'none';
+      document.getElementById('submenu3').style.display = 'block';
+      document.getElementById('submenu4').style.display = 'block';
+      document.getElementById('submenu5').style.display = 'none';
+      document.getElementById('submenu6').style.display = 'none';
+      document.getElementById('submenu7').style.display = 'none';
+      document.getElementById('submenu8').style.display = 'none';
     }
 }
 
 function show3(){
-    if(document.getElementById('submenu3').style.display == 'block'){
-        document.getElementById('submenu3').style.display = 'none';
-    }
+  if(document.getElementById('submenu5').style.display == 'block' && document.getElementById('submenu6').style.display == 'block'){
+    document.getElementById('submenu5').style.display = 'none';
+    document.getElementById('submenu6').style.display = 'none';
+}
     else{
-        document.getElementById('submenu3').style.display = 'block';
-        document.getElementById('submenu1').style.display = 'none';
-        document.getElementById('submenu2').style.display = 'none';
-        document.getElementById('submenu4').style.display = 'none';
+      document.getElementById('submenu1').style.display = 'none';
+      document.getElementById('submenu2').style.display = 'none';
+      document.getElementById('submenu3').style.display = 'none';
+      document.getElementById('submenu4').style.display = 'none';
+      document.getElementById('submenu5').style.display = 'block';
+      document.getElementById('submenu6').style.display = 'block';
+      document.getElementById('submenu7').style.display = 'none';
+      document.getElementById('submenu8').style.display = 'none';
     }
 }
 
 function show4(){
-    if(document.getElementById('submenu4').style.display == 'block'){
-        document.getElementById('submenu4').style.display = 'none';
-    }
+  if(document.getElementById('submenu7').style.display == 'block' && document.getElementById('submenu8').style.display == 'block'){
+    document.getElementById('submenu7').style.display = 'none';
+    document.getElementById('submenu8').style.display = 'none';
+}
     else{
-        document.getElementById('submenu4').style.display = 'block';
-        document.getElementById('submenu1').style.display = 'none';
-        document.getElementById('submenu2').style.display = 'none';
-        document.getElementById('submenu3').style.display = 'none';
+      document.getElementById('submenu1').style.display = 'none';
+      document.getElementById('submenu2').style.display = 'none';
+      document.getElementById('submenu3').style.display = 'none';
+      document.getElementById('submenu4').style.display = 'none';
+      document.getElementById('submenu5').style.display = 'none';
+      document.getElementById('submenu6').style.display = 'none';
+      document.getElementById('submenu7').style.display = 'block';
+      document.getElementById('submenu8').style.display = 'block';
     }
 }
 function user(){

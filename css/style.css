@@ -35,6 +35,13 @@
   --font-family-sans-serif: "Poppins", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.nav-bar {
+  background-color: transparent;
+}
 
 *,
 *::before,
@@ -159,7 +166,7 @@ a {
 
 a:hover {
   color: #527a20;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:not([href]):not([class]) {

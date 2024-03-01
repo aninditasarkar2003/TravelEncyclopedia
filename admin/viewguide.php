@@ -25,15 +25,15 @@ include 'include/top-right.php';
                         <thead>
                             <tr>
                                 <th data-priority="1">Sl No</th>
-                                <th>Place Name</th>
-                                <th>From</th>
-                                <th>To</th>
-                                <th>Pin</th>
-                                <th>District</th>
-                                <th>State</th>
-                                <th>Date</th>
-                                <th>Amount</th>
-                                <th>Description</th>
+                                <th>Name</th>
+                                <th>Designation</th>
+                                <th>Age</th>
+                                <th>Instagram</th>
+                                <th>Facebook</th>
+                                <th>Twitter</th>
+                                <th>LinkedIn</th>
+                                <th>Home Town</th>
+                                <th>About</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -41,7 +41,7 @@ include 'include/top-right.php';
                         <tbody>
                             <?php
                             include 'sql/config.php';
-                            $sql = "SELECT * FROM package";
+                            $sql = "SELECT * FROM guide";
                             $table = mysqli_query($conn, $sql);
                             $i=1;
                             if (mysqli_num_rows($table) > 0) {
@@ -50,18 +50,18 @@ include 'include/top-right.php';
                                     <tr>
                                     <td><?php echo $row['id']; ?></td>
                                     <td><?php echo $row['pname']; ?></td>
-                                    <td><?php echo $row['fromm']; ?></td>
-                                    <td><?php echo $row['too']; ?></td>
-                                    <td><?php echo $row['pin']; ?></td>
-                                    <td><?php echo $row['district']; ?></td>
-                                    <td><?php echo $row['statee']; ?></td>
-                                    <td><?php echo $row['datee']; ?></td>
-                                    <td><?php echo $row['amount']; ?></td>
-                                    <td><?php echo $row['descrp']; ?></td>
-                                    <td><img class="mt-1" src="img/<?php echo $row['img']; ?>" alt="<?php echo $row['img']; ?>" height="45px" width="45px"></td>
+                                    <td><?php echo $row['desig']; ?></td>
+                                    <td><?php echo $row['age']; ?></td>
+                                    <td><?php echo $row['insta']; ?></td>
+                                    <td><?php echo $row['fb']; ?></td>
+                                    <td><?php echo $row['tw']; ?></td>
+                                    <td><?php echo $row['li']; ?></td>
+                                    <td><?php echo $row['home']; ?></td>
+                                    <td><?php echo $row['about']; ?></td>
+                                    <td><img class="mt-1" src="img/guide/<?php echo $row['img']; ?>" alt="<?php echo $row['img']; ?>" height="45px" width="45px"></td>
                                     <td>
-                                        <a href="menuupdate.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
-                                        <a href="sql/menudelete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a>
+                                        <a href="guideupdate.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a>
+                                        <a href="sql/deleteguide.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                                 <?php

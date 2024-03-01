@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start the session at the beginning of your script
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +13,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/logo.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -30,22 +34,23 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-fluid position-relative p-0 m-0" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg shadow-lg py-8 py-lg-0 pl-8 pl-lg-13">
-                <a href="" class="navbar-brand">
-                    <h1 class="m-0 text-primary"><span class="text-light">TRAVEL ENCYCLO</span>PEDIA</h1>
+   <div class="container-fluid position-relative  nav-bar p-0 ">
+        <div class="container-fluid position-relative bg-dark pt-8 m-0" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg  shadow-lg py-2 pl-8 pl-lg-13">
+                <a href="#" class="">
+                    <img src="img/logo.png" alt="Logo" style="height: 40px; display: inline-block; vertical-align: middle;">
+                    <h1 style="display: inline-block; vertical-align: middle;" class="m-0 text-primary"><span class="text-light">TRAVEL ENCYCLO</span>PEDIA</h1>
                 </a>
                 
                 
                     <div class="navbar-nav ml-auto py-0" >
-                        <a href="index.php" class="nav-item nav-link active">Home</a>
-                        <a href="about.php" class="nav-item nav-link text-light">About</a>
+                        <a href="index.php" class="nav-item nav-link active text-primary ">Home</a>
+                        <a href="about.php" class="nav-item nav-link  text-light">About</a>
                         <a href="service.php" class="nav-item nav-link text-light">Services</a>
                         <a href="package.php" class="nav-item nav-link text-light">Tour Packages</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu border-0 rounded-0 m-0">
+                            <div class="dropdown-menu bg-dark border-0 rounded-lg m-0">
                                 <a href="blog.php" class="dropdown-item text-light">Blog Grid</a>
                                 <a href="single.php" class="dropdown-item text-light">Blog Detail</a>
                                 <a href="destination.php" class="dropdown-item text-light">Destination</a>
@@ -54,17 +59,68 @@
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link text-light">Contact</a>
-                        <a href="./user/index.php" class="btn btn-success">Sign Up</a>
+                        <?php
+if (!isset($_SESSION['login_admin'])) {
+    // The 'login_admin' session variable is not set, so the user is not logged in
+    echo '<a href="login.php" class="btn btn-success">Log In</a>';
+}
+?>
+<?php
+if (isset($_SESSION['login_admin'])) {
+    echo '<div class="top-right">
+            <img src="img/user.png" alt="user" height="40px" width="40px" class="cursor-pointer" onclick="user()">
+            
+            <div class="drop" id="dropuser" style="display: none;">
+               
+            <a href="./user/logout.php" class="btn btn-success">Logout</a>
+        </div>
+        </div>';
+
+    echo '<script>
+    function user(){
+        if(document.getElementById("dropuser").style.display == "block"){
+            document.getElementById("dropuser").style.display = "none";
+        }
+        else{
+            document.getElementById("dropuser").style.display = "block";
+        }
+    }
+    </script>';
+
+    echo '<style>
+    .drop {
+        position: absolute;
+        top: 100%;  
+        right: 0;    
+        z-index: 1; 
+    }
+
+    .logout-button {
+        display: block;  /* Make the link take up the whole line */
+        padding: 10px;  /* Add some padding */
+        color: #333;  /* Change the text color */
+        text-decoration: none;  /* Remove the underline */
+    }
+
+    .logout-button:hover {
+        background-color: #e2e6ea;  /* Change the background color when hovering */
+    }
+    </style>';
+}
+?>
                     </div>
                 
             </nav>
         </div>
     </div>
+
+
+
     <!-- Navbar End -->
 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 -mt-8">
+    <div class="container-fluid p-0 hero">
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -401,7 +457,7 @@
                 <div class="col-lg-5">
                     <div class="card border-0">
                         <div class="card-header bg-primary text-center p-4">
-                            <h1 class="text-white m-0">Sign Up Now</h1>
+                            <h1 class="text-white m-0">Book Now</h1>
                         </div>
                         <div class="card-body rounded-bottom bg-white p-5">
                             <form>
@@ -414,13 +470,13 @@
                                 <div class="form-group">
                                     <select class="custom-select px-4" style="height: 47px;">
                                         <option selected>Select a destination</option>
-                                        <option value="1">destination 1</option>
-                                        <option value="2">destination 1</option>
-                                        <option value="3">destination 1</option>
+                                        <option value="1">Maldives</option>
+                                        <option value="2">Goa</option>
+                                        <option value="3">Vietnam</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary btn-block py-3" type="submit">Sign Up Now</button>
+                                    <button class="btn btn-primary btn-block py-3" type="submit">Book Now</button>
                                 </div>
                             </form>
                         </div>
@@ -440,74 +496,36 @@
                 <h1>Our Travel Guides</h1>
             </div>
             <div class="row">
+            <?php
+                            include './admin/sql/config.php';
+                            $sql = "SELECT * FROM guide";
+                            $table = mysqli_query($conn, $sql);
+                            $i=1;
+                            if (mysqli_num_rows($table) > 0) {
+                                while ($row = mysqli_fetch_array($table)){
+                                    ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid w-100" src="./admin/img/guide/<?php echo $row['img']; ?>" alt="<?php echo $row['img']; ?>">
                             <div class="team-social">
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href="https://twitter.com/<?php echo $row['tw']; ?>"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href="https://www.facebook.com/<?php echo $row['fb']; ?>"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href="https://www.instagram.com/<?php echo $row['insta']; ?>"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href="https://www.linkedin.com/in/<?php echo $row['li']; ?>"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                         <div class="text-center py-4">
-                            <h5 class="text-truncate">Guide Name</h5>
-                            <p class="m-0">Designation</p>
+                            <h5 class="text-truncate"><?php echo $row['pname']; ?></h5>
+                            <p class="m-0"><?php echo $row['desig']; ?></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">Guide Name</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">Guide Name</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">Guide Name</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                                $i++;
+                                }
+                            }
+                            ?>
             </div>
         </div>
     </div>

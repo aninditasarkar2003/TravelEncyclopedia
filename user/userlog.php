@@ -13,7 +13,7 @@ if(isset($_POST['ulog'])){
         $username = mysqli_real_escape_string($conn, $username);  
         $password = mysqli_real_escape_string($conn, $password);  
       
-        $sql = "select *from user where username = '$username' and password = '$password'";  
+        $sql = "SELECT *from users where username = '$username' and password = '$password'";  
         $result = mysqli_query($conn, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
@@ -21,13 +21,13 @@ if(isset($_POST['ulog'])){
         if($count == 1){ 
             $_SESSION['login_admin'] = $username; 
             echo "<script> alert('Login successful');
-             window.location = 'welcome.php';
+             window.location = 'http://localhost/TravelEncyclopedia';
             </script>";
            	  
         }  
         else{  
             echo "<script> alert('Login failed. Invalid username or password.');
-            window.location ='login.php';
+            window.location ='../login.php';
             
             </script>";  
         } 

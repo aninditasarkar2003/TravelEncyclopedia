@@ -5,7 +5,7 @@
                         <i class="fas fa-search"></i>
                 </form>
             </div>
-            <P class="pl-3 float-right"> <b>Hello</b> User</P>
+            <P class="pl-3 float-right"> <b>Hello</b> Admin</P>
             <img src="img/profile.png" alt="..." height="40px" width="40px" onclick="user()">
             
             <div class="dropdown" id="dropuser">
