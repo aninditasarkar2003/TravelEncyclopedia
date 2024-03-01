@@ -1,0 +1,202 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.main{
+    height: 1500px;
+    background-color: #EEF5FF;
+}
+.left-area{
+    height: 1500px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+.img-area{
+    height: 50px;
+}
+.img-area img{
+    margin-left: 20px;
+}
+.img-area span{
+    color: #018CD0;
+    letter-spacing: 0.5px;
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+.img-area a{
+    padding-left: 25px;
+    display: none;
+}
+.left-area p{
+    font-size: 11px;
+    text-transform: uppercase;
+    padding-left: 40px;
+}
+.left-area nav ul li{
+    display: block;
+}
+.left-area nav li a{
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 50px;
+    color: #000;
+}
+#dash{
+    background-color: hsl(200, 87%, 62%);
+    width: 100%;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    padding-left: -50px!important;
+}
+
+.left-area nav li a i{
+    padding-right: 5px;
+}
+#drop1, #drop2,#drop3,#drop4{
+    float: right;
+    padding-right: 20px;
+    line-height: 50px;
+} 
+#submenu1, #submenu2, #submenu3, #submenu4{
+    display: none;
+}
+#submenu1, #submenu2, #submenu3, #submenu4 a{
+    color: #018CD0;
+    font-size: 12px;
+    padding-left: 25px;
+}
+#submenu1 a{
+    text-decoration: none!important;
+}
+
+@media(max-width:600px){
+    .img-area a{
+        float: right;
+        display: block;
+        padding-right: 35px;
+        padding-top: 20px;
+    }
+    #submainnav{
+        display: none;
+    }
+}
+
+
+.top-right{
+    height: 55px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+.top-right form input[type="text"]{
+    width: 480px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+.top-right i{
+    color: #000;
+    padding-left: 440px;
+    margin-top: -25px!important;
+    display: block;
+    font-size: 14px;
+}
+.top-right img{
+    float: right;
+    margin-top: -30px;
+    display: inline-block;
+}
+.top-right p{
+    margin-top: -20px;
+}
+.top-right #dropuser{
+    width: 180px;
+    height: 60px;
+    float: right;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    margin-top: 20px;
+    margin-left: 60px!important;
+    display: none;
+}
+.top-right #dropuser a{
+    color: #000!important;
+    text-decoration: none;
+   padding-left: 10px;
+   line-height: 60px;
+}
+
+.card1{
+    height: 100px;
+   
+   
+}
+.card-left{
+    height: 100px;
+    width: 100%;
+    border-radius: 7px;
+     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+ .card-left .img-icon{
+    height: 80px;
+    width: 60%;
+    float:left;
+}
+ .card-left .img-icon img{
+    float: left;
+    margin-top: 30px;
+}
+ .card-left .img-icon p{
+    font-size: 13px;
+    padding-left:40px;
+}
+.card-left .img-icon span{
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    margin-top: -17px!important;
+    padding-left: 40px;
+    display: block;
+}
+ .card-left .cont-right{
+    height: 80px;
+    width: 40%;
+    float: left;
+}
+.card-left .cont-right img{
+    margin-top: 25px;
+    float: left;
+}
+.card-left .cont-right p{
+    float: right;
+    font-size: 13px!important;
+}
+
+
+
+/*product css here*/
+
+
+.card-area{
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.card-area input[type="text"][type="number"]{
+    width: 100%!important;
+    border-radius: 0px!important;
+}
+.card-area select{
+    border-radius: 0px!important;
+}
+
+.card-area-left{
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+   
+}
+
+
+product image code here
