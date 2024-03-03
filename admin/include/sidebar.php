@@ -33,24 +33,32 @@
                         <li><a href="#" onclick="show3()">  <i class="fas fa-layer-group"></i> Destination <i class="fas fa-angle-down" id="drop3"></i></a>  </li>
                         
                         <div id="submenu5">
-                            <a href="#"> <i class="fas fa-plus"></i> Add Destination</a>
+                            <a href="#" style="text-decoration: none;"> <i class="fas fa-plus"></i> Add Destination</a>
                         </div>
                         <div id="submenu6">
-                            <a href="#"> <i class="fas fa-circle-notch"></i> View Destinations</a>
+                            <a href="#" style="text-decoration: none;"> <i class="fas fa-circle-notch"></i> View Destinations</a>
                         </div>
 
                         <li><a href="#" onclick="show4()"> <i class="fas fa-newspaper"></i> Blog <i class="fas fa-angle-down" id="drop4"></i></a> </li>
 
                         <div id="submenu7">
-                            <a href="#"> <i class="fas fa-plus"></i>Add Blogs</a>
+                            <a href="#" style="text-decoration: none;"> <i class="fas fa-plus"></i>Add Blogs</a>
                         </div>
                         <div id="submenu8">
-                            <a href="#"> <i class="fas fa-circle-notch"></i> View blogs</a>
+                            <a href="#" style="text-decoration: none;"> <i class="fas fa-circle-notch"></i> View blogs</a>
                         </div>
-                        <li><a href="#" onclick="show5()"> <i class="far fa-user"></i> Users <i class="fas fa-angle-down" id="drop5"></i></a> </li>
+                        <li><a href="#" onclick="show5()"> <i class="fas fa-book"></i> Booking <i class="fas fa-angle-down" id="drop5"></i></a> </li>
 
                         <div id="submenu9">
-                            <a href="#"> <i class="fas fa-circle-notch"></i> Home</a>
+                            <a href="#" style="text-decoration: none;"> <i class="fas fa-plus"></i>Add Bookings</a>
+                        </div>
+                        <div id="submenu10">
+                            <a href="viewbooking.php" style="text-decoration: none;"> <i class="fas fa-circle-notch"></i> View Bookings</a>
+                        </div>
+                        <li><a href="#" onclick="user()"> <i class="far fa-user"></i> Users <i class="fas fa-angle-down" id="drop6"></i></a> </li>
+
+                        <div id="dropuser">
+                            <a href="viewuser.php" style="text-decoration: none;"> <i class="fas fa-circle-notch"></i> View Users</a>
                         </div>
                     </ul>
                 </nav>

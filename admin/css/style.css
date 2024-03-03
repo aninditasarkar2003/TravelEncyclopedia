@@ -55,20 +55,18 @@ body{
 .left-area nav li a i{
     padding-right: 5px;
 }
-#drop1, #drop2,#drop3,#drop4{
+#drop1, #drop2,#drop3,#drop4,#drop5,#drop6{
     float: right;
     padding-right: 20px;
     line-height: 50px;
 } 
-#submenu1, #submenu2, #submenu3, #submenu4{
+#submenu1, #submenu2, #submenu3, #submenu4,#submenu5,#submenu6,#submenu7,#submenu8,#submenu9,#submenu10,#submenu11,dropuser{
     display: none;
 }
-#submenu1, #submenu2, #submenu3, #submenu4 a{
+#submenu1, #submenu2, #submenu3, #submenu4,#submenu5,#submenu6,#submenu7,#submenu8,#submenu9,#submenu10,#submenu11,dropuser a{
     color: #018CD0;
     font-size: 12px;
     padding-left: 25px;
-}
-#submenu1 a{
     text-decoration: none!important;
 }
 

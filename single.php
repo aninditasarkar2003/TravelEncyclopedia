@@ -60,7 +60,50 @@ session_start(); // Start the session at the beginning of your script
                         <?php
 if (!isset($_SESSION['login_admin'])) {
     // The 'login_admin' session variable is not set, so the user is not logged in
-    echo '<a href="./user/index.php" class="btn btn-success">Sign Up</a>';
+    echo '<a href="login.php" class="btn btn-success">Log In</a>';
+}
+?>
+<?php
+if (isset($_SESSION['login_admin'])) {
+    echo '<div class="top-right">
+            <img src="img/user.png" alt="user" height="40px" width="40px" class="cursor-pointer" onclick="user()">
+            
+            <div class="drop" id="dropuser" style="display: none;">
+               
+            <a href="./user/logout.php" class="btn btn-success">Logout</a>
+        </div>
+        </div>';
+
+    echo '<script>
+    function user(){
+        if(document.getElementById("dropuser").style.display == "block"){
+            document.getElementById("dropuser").style.display = "none";
+        }
+        else{
+            document.getElementById("dropuser").style.display = "block";
+        }
+    }
+    </script>';
+
+    echo '<style>
+    .drop {
+        position: absolute;
+        top: 100%;  
+        right: 0;    
+        z-index: 1; 
+    }
+
+    .logout-button {
+        display: block;  /* Make the link take up the whole line */
+        padding: 10px;  /* Add some padding */
+        color: #333;  /* Change the text color */
+        text-decoration: none;  /* Remove the underline */
+    }
+
+    .logout-button:hover {
+        background-color: #e2e6ea;  /* Change the background color when hovering */
+    }
+    </style>';
 }
 ?>
                     </div>

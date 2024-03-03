@@ -139,7 +139,14 @@ if (isset($_SESSION['login_admin'])) {
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
                             <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                            <a href="#offer" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+<script>
+$(document).ready(function(){
+  $(".btn-primary").click(function(){
+    $("#offer").show();
+  });
+});
+</script>
                         </div>
                     </div>
                 </div>
@@ -159,53 +166,55 @@ if (isset($_SESSION['login_admin'])) {
     <!-- Carousel End -->
 
 
-    <!-- Booking Start -->
-    <div class="container-fluid booking mt-5 pb-5">
+     <!-- Booking Start -->
+     <div class="container-fluid booking mt-5 pb-5">
         <div class="container pb-5">
             <div class="bg-light shadow" style="padding: 30px;">
+                <form action ="./admin/sql/booking.php" class="form" method="post">
                 <div class="row align-items-center" style="min-height: 60px;">
                     <div class="col-md-10">
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
+                                    <select class="custom-select px-4" name="destination" style="height: 47px;">
                                         <option selected>Destination</option>
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 1</option>
-                                        <option value="3">Destination 1</option>
+                                        <option value="Maldives">Maldives</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Vietnam">Vietnam</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
                                     <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker"/>
+                                        <input type="text" name="depart" class="form-control p-4 datetimepicker-input" placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
                                     <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
+                                        <input type="text" name="rtn" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Duration</option>
-                                        <option value="1">Duration 1</option>
-                                        <option value="2">Duration 1</option>
-                                        <option value="3">Duration 1</option>
+                                    <select class="custom-select px-4" name="duration" style="height: 47px;">
+                                        <option selected>Duration (Days)</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Submit</button>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-block pb-3 pt-3">
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -437,7 +446,7 @@ if (isset($_SESSION['login_admin'])) {
 
 
     <!-- Registration Start -->
-    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+    <div class="container-fluid bg-registration py-5" id="offer" style="margin: 90px 0;">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-7 mb-5 mb-lg-0">
@@ -460,23 +469,31 @@ if (isset($_SESSION['login_admin'])) {
                             <h1 class="text-white m-0">Book Now</h1>
                         </div>
                         <div class="card-body rounded-bottom bg-white p-5">
-                            <form>
+                            <form action ="./admin/sql/booknow.php" class="form" method="post">                               
                                 <div class="form-group">
-                                    <input type="text" class="form-control p-4" placeholder="Your name" required="required" />
+                                    <input type="text" name="pname" class="form-control p-4" placeholder="Your name" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control p-4" placeholder="Your email" required="required" />
+                                    <input type="email" name="email" class="form-control p-4" placeholder="Your email" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <select class="custom-select px-4" style="height: 47px;">
+                                    <select class="custom-select px-4" name="destination" style="height: 47px;">
                                         <option selected>Select a destination</option>
-                                        <option value="1">Maldives</option>
-                                        <option value="2">Goa</option>
-                                        <option value="3">Vietnam</option>
+                                        <option value="Maldives">Maldives</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Vietnam">Vietnam</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="custom-select px-4" name="duration" style="height: 47px;">
+                                        <option selected>Duration (Days)</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary btn-block py-3" type="submit">Book Now</button>
+                                <input type="submit" name="submit" value="Book Now" class="btn btn-primary btn-block py-3">
                                 </div>
                             </form>
                         </div>
@@ -658,7 +675,7 @@ if (isset($_SESSION['login_admin'])) {
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="" class="navbar-brand">
-                    <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+                    <h2 class="text-primary"><span class="text-white">TRAVEL ENCYCLO</span>PEDIA</h2>
                 </a>
                 <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
                 <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
@@ -713,7 +730,7 @@ if (isset($_SESSION['login_admin'])) {
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white-50">Copyright &copy; <a href="#">Domain</a>. All Rights Reserved.</a>
+                <p class="m-0 text-white-50">Copyright &copy; <a href="http://localhost/TravelEncyclopedia">Tavel Encyclopedia</a>. All Rights Reserved.</a>
                 </p>
             </div>
         </div>

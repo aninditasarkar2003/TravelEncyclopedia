@@ -60,7 +60,50 @@ session_start(); // Start the session at the beginning of your script
                         <?php
 if (!isset($_SESSION['login_admin'])) {
     // The 'login_admin' session variable is not set, so the user is not logged in
-    echo '<a href="./user/index.php" class="btn btn-success bg-primary">Sign Up</a>';
+    echo '<a href="login.php" class="btn btn-success">Log In</a>';
+}
+?>
+<?php
+if (isset($_SESSION['login_admin'])) {
+    echo '<div class="top-right">
+            <img src="img/user.png" alt="user" height="40px" width="40px" class="cursor-pointer" onclick="user()">
+            
+            <div class="drop" id="dropuser" style="display: none;">
+               
+            <a href="./user/logout.php" class="btn btn-success">Logout</a>
+        </div>
+        </div>';
+
+    echo '<script>
+    function user(){
+        if(document.getElementById("dropuser").style.display == "block"){
+            document.getElementById("dropuser").style.display = "none";
+        }
+        else{
+            document.getElementById("dropuser").style.display = "block";
+        }
+    }
+    </script>';
+
+    echo '<style>
+    .drop {
+        position: absolute;
+        top: 100%;  
+        right: 0;    
+        z-index: 1; 
+    }
+
+    .logout-button {
+        display: block;  /* Make the link take up the whole line */
+        padding: 10px;  /* Add some padding */
+        color: #333;  /* Change the text color */
+        text-decoration: none;  /* Remove the underline */
+    }
+
+    .logout-button:hover {
+        background-color: #e2e6ea;  /* Change the background color when hovering */
+    }
+    </style>';
 }
 ?>
                     </div>
@@ -195,7 +238,7 @@ if (!isset($_SESSION['login_admin'])) {
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="" class="navbar-brand">
-                    <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+                    <h2 class="text-primary"><span class="text-white">TRAVEL ENCYCLO</span>PEDIA</h2>
                 </a>
                 <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
                 <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
@@ -250,11 +293,7 @@ if (!isset($_SESSION['login_admin'])) {
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white-50">Copyright &copy; <a href="#">Domain</a>. All Rights Reserved.</a>
-                </p>
-            </div>
-            <div class="col-lg-6 text-center text-md-right">
-                <p class="m-0 text-white-50">Designed by <a href="https://htmlcodex.com">HTML Codex</a>
+                <p class="m-0 text-white-50">Copyright &copy; <a href="http://localhost/TravelEncyclopedia">Tavel Encyclopedia</a>. All Rights Reserved.</a>
                 </p>
             </div>
         </div>
